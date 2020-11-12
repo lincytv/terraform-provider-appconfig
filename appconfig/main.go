@@ -1,7 +1,7 @@
-package main
+package appconfig
 
 import (
-	"github.com/hashicorp/terraform/builtin/providers/appconfig"
+	"github.com/lincytv/terraform-provider-appconfig/appconfig"
 	"github.com/hashicorp/terraform/plugin"
 )
 

@@ -28,12 +28,14 @@ func Provider() terraform.ResourceProvider {
 			Description: "label",
 		  }},
 
-		ResourcesMao: map[string]*schema.Resource{},
+		ResourcesMao: map[string]*schema.Resource{
+			"appconfig_check": resourceAppconfigKv(),
+		},
 		ConfigureFunc: providerConfigure,
 	}
 }
 
-func providerConfigure(d *schema.ResiurceData) (interface{}, error) {
+func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 	config:= AppconfigValues{
 		key: d.Get("key").(string),
 		value: d.Get("value").(string),
